@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  H1 Main page
+  a(href="/login") Go to login page
+  br
+  a(href="/auth/google") Login through google
+  br
+  a(href="/registration") Go to registration page
+  br
+  a(href="/profile") Profile
+  br
+  a(href="/admin") Admin
+  br
+  a(href="/logout") Log Out
+
+  if (message && message.length > 0)
+    .status.alert.alert-warning(role="alert") #{message}

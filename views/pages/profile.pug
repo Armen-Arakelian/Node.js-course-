@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  .container
+    if(!user.email)
+      .user Logged in throug google, your Id #{user}
+    else
+      .user Email: #{user.email}
+      .name Name: #{user.name}
+    if (message)
+      .status.text-info #{message}
+    a(href="/" class="btn btn-warning") Home page
+    a(href="/logout" class="btn btn-warning") Log Out

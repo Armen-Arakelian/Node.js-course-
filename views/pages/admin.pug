@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  H1 Admin Page
+  br
+  form.form-horizontal(class="col-xs-6" action='/admin' method='POST')
+    .row.form-inline
+      label(for="userId" class="col-xs-3") User Id
+      input(class="form-control col-xs-3" type="text" name="userId" required)
+    br
+    .row.form-inline
+      button(class="btn btn-primary col-xs-12 col-sm-6" type="submit") Make Admin
+      br
+      if (message && message.length > 0)
+    .status.alert.alert-warning(role="alert") #{message}
+    
+  a(href="/" class="btn btn-warning") Home page

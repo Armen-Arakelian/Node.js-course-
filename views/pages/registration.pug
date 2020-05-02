@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  form.form-horizontal(class="col-xs-6" action='/registration' method='POST')
+    .row.form-inline
+      label(for="email" class="col-xs-3") Email
+      input(class="form-control col-xs-3" type="text" name="email" required)
+    .row.form-inline
+      label(for="password" class="col-xs-3") Password
+      input(class="form-control col-xs-3" type="text" name="password" required)
+    .row.form-inline
+      label(for='name' class='col-xs-3') Name
+      input(class="form-control col-xs-3" type='text' name='name')
+    .row.form-inline
+      button(class="btn btn-primary col-xs-12 col-sm-6" type="submit") Sign up
+    br
+    a(href="/" class="btn btn-warning") Home page
+    br
+    br
+    a(href="/login" class="btn btn-warning") Log in
+    .row.form-inline
+      if (message)
+        .status.alert.alert-warning(role="alert") #{message}
